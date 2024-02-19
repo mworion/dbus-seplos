@@ -8,7 +8,7 @@ on:
     paths:
       - dbus-seplos/**
       - tox.ini
-      - .workflow/**
+      - .workflows/**
 
 jobs:
   analyse:
