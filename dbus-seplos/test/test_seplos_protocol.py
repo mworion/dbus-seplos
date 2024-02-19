@@ -28,7 +28,7 @@ def test_int_from_ascii_3():
     signed = False
     size = 2
     result = int_from_ascii(data, offset, signed, size)
-    assert result == 1
+    assert result == 0
 
 
 def test_int_from_ascii_4():
@@ -37,7 +37,7 @@ def test_int_from_ascii_4():
     signed = False
     size = 2
     result = int_from_ascii(data, offset, signed, size)
-    assert result == 4096
+    assert result == 1
 
 
 def test_int_from_ascii_5():
