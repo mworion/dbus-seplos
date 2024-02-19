@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from ../src/seplos_protocol import int_from_ascii, is_valid_hex_string, is_valid_length
-from ../src/seplos_protocol import get_checksum, get_info_length, encode_cmd
+from dbus-seplos/src/seplos_protocol import int_from_ascii, is_valid_hex_string, is_valid_length
+from src/seplos_protocol import get_checksum, get_info_length, encode_cmd
 
 
 def test_int_from_ascii_1():
