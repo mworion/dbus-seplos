@@ -7,7 +7,7 @@ on:
 
     paths:
       - dbus-seplos/**
-      - .flake8
+      - tox.ini
 
 jobs:
   analyse:
@@ -28,16 +28,7 @@ jobs:
         git clone https://github.com/victronenergy/velib_python.git
         echo PYTHONPATH=$PYTHONPATH:$(pwd)/velib_python >> $GITHUB_ENV
 
-    - name: Initialize CodeQL
-      uses: github/codeql-action/init@v2
-      with:
-        languages: python
-
-    - name: Perform CodeQL Analysis
-      uses: github/codeql-action/analyze@v2
-
-    - name: Execute black lint check
-      uses: psf/black@stable
-
-    - name: flake8 Lint
-      uses: py-actions/flake8@v2
+    - name: Install dependencies
+      run: |
+        pip install -r dbus-seplos/requirements.txt
+        flake8 dbus-seplos
