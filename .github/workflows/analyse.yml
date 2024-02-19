@@ -5,9 +5,8 @@ on:
     branches:
       - '**'
 
-    # Run on changes in the etc folder
     paths:
-      - etc/**
+      - dbus-seplos/**
 
 jobs:
   analyse:
