@@ -20,7 +20,6 @@
 # Licence MIT
 #
 ###########################################################
-
 import sys
 import os
 import platform
@@ -186,7 +185,7 @@ class DBUS:
         try:
             result = self.battery[i].get_all()
         except Exception:
-            logger.error(f'Error in publish_battery')
+            logger.error('Error in publish_battery')
             main_loop.quit()
             return False
 
@@ -201,7 +200,7 @@ class DBUS:
             self.error[i]['count'] += 1
             time_since_first_error = (self.error[i]['timestamp_last'] - self.error[i]['timestamp_first'])
             if time_since_first_error >= 60:
-                logger.error(f'Timeout for too mny errors')
+                logger.error('Timeout for too mny errors')
                 main_loop.quit()
         return True
 
@@ -249,7 +248,7 @@ class DBUS:
             dbus['/Voltages/Diff'] = battery.telemetry.delta_cell_voltage
 
         except Exception:
-            logger.error(f"Error in publish_dbus cell voltages")
+            logger.error('Error in publish_dbus cell voltages')
             pass
 
     def publish_battery_pack(self, main_loop):

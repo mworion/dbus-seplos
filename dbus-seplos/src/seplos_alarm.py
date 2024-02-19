@@ -112,7 +112,7 @@ class Alarm:
         self.no_calibration_of_null_point: str = None
 
     @staticmethod
-    def stat_20bit_alarm(data: bytes, offset: int, on_off_bit: int = None, 
+    def stat_20bit_alarm(data: bytes, offset: int, on_off_bit: int = None,
                          warn_bit: int = None, protection_bit: int = None) -> str:
         """
         """

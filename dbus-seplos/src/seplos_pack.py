@@ -20,7 +20,6 @@
 # Licence MIT
 #
 ###########################################################
-
 import serial
 from seplos_battery import SeplosBattery
 from seplos_comm import Comm

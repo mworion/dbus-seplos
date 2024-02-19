@@ -20,7 +20,6 @@
 # Licence MIT
 #
 ###########################################################
-
 import logging
 import time
 import datetime

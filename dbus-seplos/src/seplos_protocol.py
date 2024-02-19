@@ -20,7 +20,6 @@
 # Licence MIT
 #
 ###########################################################
-
 from seplos_utils import logger
 
 COMMAND_PROTOCOL_VERSION = 0x4F
@@ -88,8 +87,9 @@ def is_valid_frame(data: bytes) -> bool:
         return True
 
     checksum = get_checksum(data[1:-5])
-    if checksum != int_from_ascii(data, offset=-5, size=4):
-        logger.debug(f'Checksum error')
+    checksum_received = int_from_ascii(data, offset=-5, size=4)
+    if checksum != checksum_received:
+        logger.debug(f'Checksum error {checksum} - {checksum_received}')
         return False
 
     if cid2 != b'00':

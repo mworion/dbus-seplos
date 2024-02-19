@@ -20,7 +20,6 @@
 # Licence MIT
 #
 ###########################################################
-
 from seplos_protocol import int_from_ascii
 from seplos_utils import roundSec
 
