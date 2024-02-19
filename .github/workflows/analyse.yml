@@ -7,6 +7,7 @@ on:
 
     paths:
       - dbus-seplos/**
+      - .flake8
 
 jobs:
   analyse:
