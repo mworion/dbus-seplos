@@ -1,0 +1,33 @@
+name: Release
+
+on:
+  push:
+    tags:
+      # do not match pre release
+      # matches:
+      # v1.0.0
+      # v1.0.123
+      - "v[0-9]+.[0-9]+.[0-9]+"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: build release archive
+        run: |
+          find . -type f -name "*.py" -exec chmod +x {} \;
+          find . -type f -name "*.sh" -exec chmod +x {} \;
+          find . -type f -name "run" -exec chmod +x {} \;
+          tar -czvf dbus-seplos.tar.gz \
+            --mode='a+rwX' \
+            --exclude __pycache__ \
+            dbus-seplos/ \
+            rc/
+
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: dbus-seplos.tar.gz
