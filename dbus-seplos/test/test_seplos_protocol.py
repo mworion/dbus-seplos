@@ -19,7 +19,7 @@ def test_int_from_ascii_2():
     signed = False
     size = 2
     result = int_from_ascii(data, offset, signed, size)
-    assert result == 4096
+    assert result == 16
 
 
 def test_int_from_ascii_3():
@@ -28,7 +28,7 @@ def test_int_from_ascii_3():
     signed = False
     size = 2
     result = int_from_ascii(data, offset, signed, size)
-    assert result == 16
+    assert result == 1
 
 
 def test_int_from_ascii_4():
@@ -46,7 +46,7 @@ def test_int_from_ascii_5():
     signed = False
     size = 4
     result = int_from_ascii(data, offset, signed, size)
-    assert result == 1048576
+    assert result == 16
 
 
 def test_is_valid_hex_string_1():
@@ -89,7 +89,8 @@ def test_get_info_length_1():
 
 def test_encode_cmd_1():
     address = 0x00
+    cid1 = 0x46
     cid2 = 0x42
     info = b'-00200'
-    result = encode_cmd(address, cid2, info)
+    result = encode_cmd(address, cid1, cid2, info)
     assert result == b'~20004642A006-00200FC78\r'
