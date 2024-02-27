@@ -20,6 +20,7 @@
 # Licence MIT
 #
 ###########################################################
+
 from seplos_utils import logger
 
 COMMAND_PROTOCOL_VERSION = 0x4F

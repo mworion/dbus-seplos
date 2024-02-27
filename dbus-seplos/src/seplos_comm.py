@@ -20,6 +20,7 @@
 # Licence MIT
 #
 ###########################################################
+
 import serial
 from seplos_utils import logger
 from seplos_protocol import is_valid_hex_string, is_valid_frame, is_valid_length

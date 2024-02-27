@@ -20,6 +20,7 @@
 # Licence MIT
 #
 ###########################################################
+
 import sys
 import os
 import time
@@ -33,8 +34,13 @@ from seplos_pack import SeplosPack
 from seplos_utils import logger
 
 
+DRIVER_VERSION = '0.0.2'
+
+
 def get_port() -> str:
     """
+    The port argument is the link in the /dev folder. So the first
+    USB serial port will be TTYUSB0.
     """
     if len(sys.argv) == 2:
         logger.info(f"Getting port {sys.argv[1]}")
@@ -45,6 +51,10 @@ def get_port() -> str:
 
 def main():
     """
+    When seplos_run is called, the caller routine adds the actual used
+    serial port as argument. For this port all testing is done. Once a
+    positive test is done, seplos_dbus will occupy this port for the 
+    whole lifecycle.
     """
     port = get_port()
     time.sleep(3)
@@ -66,12 +76,13 @@ def main():
 
     gobject.timeout_add(seplos_pack.POLL_INTERVAL,
                         lambda: helper.publish_battery_pack(main_loop))
+    logger.info(f'seplos-dbus started on port {port}')  
 
     try:
         main_loop.run()
     except KeyboardInterrupt:
         pass
-
+    logger.info('seplos-dbus stopped')
 
 if __name__ == '__main__':
     main()

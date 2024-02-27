@@ -20,6 +20,7 @@
 # Licence MIT
 #
 ###########################################################
+
 import sys
 import os
 import platform
@@ -32,7 +33,8 @@ sys.path.insert(1, os.path.join(os.path.dirname(__file__),
 
 from vedbus import VeDbusService
 from settingsdevice import SettingsDevice
-from seplos_utils import logger, DRIVER_VERSION, roundSec
+from seplos_utils import logger, roundSec
+from seplos_run import DRIVER_VERSION
 
 # Victron packages
 

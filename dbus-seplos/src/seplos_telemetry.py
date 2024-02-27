@@ -20,6 +20,7 @@
 # Licence MIT
 #
 ###########################################################
+
 from seplos_protocol import int_from_ascii
 from seplos_utils import roundSec
 
@@ -27,12 +28,8 @@ from seplos_utils import roundSec
 class Telemetry:
     """
     """
-    MIN_CELL_VOLTAGE = 2.5
-    MAX_CELL_VOLTAGE = 3.6
-
     def __init__(self):
         """
-
         """
         # from pack
         self.number_of_cells: int = None
@@ -61,8 +58,6 @@ class Telemetry:
         self.lowest_cell_temperature: float = None
         self.highest_cell_tid: int = None
         self.highest_cell_temperature: float = None
-        self.min_pack_voltage: float = None
-        self.max_pack_voltage: float = None
         self.dis_charge_power: float = None
 
     def get_lowest_cell_voltage(self) -> tuple:
@@ -109,9 +104,6 @@ class Telemetry:
         soh_offset = 126
         port_voltage_offset = 130
         self.number_of_cells = int_from_ascii(data=data, offset=4, size=2)
-
-        self.min_pack_voltage = self.MIN_CELL_VOLTAGE * self.number_of_cells
-        self.max_pack_voltage = self.MAX_CELL_VOLTAGE * self.number_of_cells
 
         for i in range(self.number_of_cells):
             voltage = int_from_ascii(data, cell_voltage_offset + i * 4) / 1000

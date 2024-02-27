@@ -20,6 +20,7 @@
 # Licence MIT
 #
 ###########################################################
+
 from seplos_alarm import Alarm
 from seplos_telemetry import Telemetry
 from seplos_comm import Comm

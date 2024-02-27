@@ -1,3 +1,27 @@
 #!/bin/sh
+
+############################################################
+# -*- coding: utf-8 -*-
+#
+#  o-o   o--o  o   o  o-o
+#  |  \  |   | |   | |
+#  |   O O--o  |   |  o-o
+#  |  /  |   | |   |     |
+#  o-o   o--o   o-o  o--o
+#
+#
+#   o-o  o--o o--o  o     o-o   o-o
+#  |     |    |   | |    o   o |
+#   o-o  O-o  O--o  |    |   |  o-o
+#      | |    |     |    o   o     |
+#  o--o  o--o o     O---o o-o  o--o
+#
+# python-based service for victron cerbo > v3.00
+#
+# (c) 2024 by mworion
+# Licence MIT
+#
+###########################################################
+
 exec 2>&1
 exec /opt/victronenergy/dbus-seplos/scripts/start-seplos.sh TTY
