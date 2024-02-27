@@ -53,7 +53,7 @@ def main():
     """
     When seplos_run is called, the caller routine adds the actual used
     serial port as argument. For this port all testing is done. Once a
-    positive test is done, seplos_dbus will occupy this port for the 
+    positive test is done, seplos_dbus will occupy this port for the
     whole lifecycle.
     """
     port = get_port()
@@ -76,13 +76,14 @@ def main():
 
     gobject.timeout_add(seplos_pack.POLL_INTERVAL,
                         lambda: helper.publish_battery_pack(main_loop))
-    logger.info(f'seplos-dbus started on port {port}')  
+    logger.info(f'seplos-dbus started on port {port}')
 
     try:
         main_loop.run()
     except KeyboardInterrupt:
         pass
     logger.info('seplos-dbus stopped')
+
 
 if __name__ == '__main__':
     main()
