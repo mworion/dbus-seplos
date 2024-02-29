@@ -38,8 +38,8 @@ cp /data/etc/dbus-seplos/qml/PageBatteryTemperatures.qml /opt/victronenergy/gui/
 
 
 # stop gui
-svc -d /service/gui
+svc -d /service/start-gui
 # sleep 1 sec
 sleep 1
 # start gui
-svc -u /service/gui
+svc -u /service/start-gui

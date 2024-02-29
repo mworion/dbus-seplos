@@ -46,7 +46,7 @@ def get_bus() -> Union[dbus.SessionBus, dbus.SystemBus]:
             else dbus.SystemBus())
 
 
-class DBUS:
+class DBUS_Seplos:
     """
     """
     def __init__(self, pack):

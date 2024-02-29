@@ -108,6 +108,7 @@ MbPage {
             item {
                 bind: service.path("/Soc")
                 unit: "%"
+                decimals: 1
             }
         }
 
