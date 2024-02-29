@@ -34,7 +34,7 @@ from seplos_pack import SeplosPack
 from seplos_utils import logger
 
 
-DRIVER_VERSION = '0.0.2'
+DRIVER_VERSION = '0.0.3'
 
 
 def get_port() -> str:

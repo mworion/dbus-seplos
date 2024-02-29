@@ -74,12 +74,13 @@ class DBUS:
         # logger.info("DeviceInstance = %d", int(val[1]))
         return val[0], int(val[1])
 
-    def handle_changed_setting(self, setting, old_value, new_value):
+    def handlechangedvalue(self, setting, old_value, new_value) -> bool:
         """
         """
         if setting == 'instance':
             _, instance = self.get_role_instance()
             logger.info(f'Changed DeviceInstance = {instance:d}')
+        return True
 
     def setup_instance(self, i: int) -> tuple:
         """
@@ -91,7 +92,7 @@ class DBUS:
                                  default_instance, 0, 0]}
 
         self.settings[i] = SettingsDevice(get_bus(), settings,
-                                          self.handle_changed_setting)
+                                          self.handlechangedvalue)
         self.battery[i].role, _ = self.get_role_instance(i)
         return
 
@@ -179,7 +180,7 @@ class DBUS:
                 self.setup_vedbus(i)
         return True
 
-    def publish_battery(self, main_loop, i: int):
+    def publish_battery(self, main_loop, i: int) -> bool:
         """
         This is called every battery.poll_interval millisecond as set up per
         battery type to read and update the data
@@ -206,7 +207,7 @@ class DBUS:
                 main_loop.quit()
         return True
 
-    def publish_dbus(self, i: int):
+    def publish_dbus(self, i: int) -> None:
         """
         """
         dbus = self.dbusservice[i]
@@ -253,7 +254,7 @@ class DBUS:
             logger.error('Error in publish_dbus cell voltages')
             pass
 
-    def publish_battery_pack(self, main_loop):
+    def publish_battery_pack(self, main_loop) -> bool:
         """
         """
         for i in range(self.number_batteries):
