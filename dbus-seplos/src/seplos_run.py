@@ -29,12 +29,9 @@ if sys.version_info.major == 2:
     import gobject
 else:
     from gi.repository import GLib as gobject
-from seplos_dbus import DBUS_Seplos
+from seplos_dbus import DBUS_SEPLOS
 from seplos_pack import SeplosPack
 from seplos_utils import logger
-
-
-DRIVER_VERSION = '0.0.3'
 
 
 def get_port() -> str:
@@ -69,7 +66,7 @@ def main():
 
     DBusGMainLoop(set_as_default=True)
     main_loop = gobject.MainLoop()
-    helper = DBUS_Seplos(seplos_pack)
+    helper = DBUS_SEPLOS(seplos_pack)
     if not helper.setup_vedbus_pack():
         logger.error('Failed to setup dbus')
         sys.exit(1)

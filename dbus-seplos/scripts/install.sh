@@ -48,4 +48,4 @@ bash /data/etc/dbus-seplos/scripts/install-qml.sh
 # kill driver, if running. It gets restarted by the service daemon
 pkill -f "supervise dbus-seplos.*"
 pkill -f "multilog .* /var/log/dbus-seplos.*"
-pkill -f "python .*/dbus-seplos.py"
+pkill -f "python .*/seplos_run.py"

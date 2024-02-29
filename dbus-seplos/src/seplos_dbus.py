@@ -28,15 +28,11 @@ import time
 from typing import Union
 import dbus
 
-sys.path.insert(1, os.path.join(os.path.dirname(__file__),
-                                '/opt/victronenergy/dbus-systemcalc-py/ext/velib_python'))
-
+sys.path.insert(1, os.path.join(os.path.dirname(__file__), '../ext/velib_python'))
 from vedbus import VeDbusService
 from settingsdevice import SettingsDevice
 from seplos_utils import logger, roundSec
-from seplos_run import DRIVER_VERSION
-
-# Victron packages
+from seplos_utils import DRIVER_VERSION
 
 
 def get_bus() -> Union[dbus.SessionBus, dbus.SystemBus]:
@@ -46,7 +42,7 @@ def get_bus() -> Union[dbus.SessionBus, dbus.SystemBus]:
             else dbus.SystemBus())
 
 
-class DBUS_Seplos:
+class DBUS_SEPLOS:
     """
     """
     def __init__(self, pack):
