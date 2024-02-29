@@ -72,28 +72,28 @@ class Telemetry:
         self.highest_cell_temperature: float = None
         self.dis_charge_power: float = None
 
-    def get_lowest_cell_voltage(self) -> tuple:
+    def get_lowest_cell_voltage(self) -> (int, float):
         """
         """
         lowest_cell = self.cell_voltage.index(min(self.cell_voltage))
         lowest_cell_voltage = self.cell_voltage[lowest_cell]
         return lowest_cell, lowest_cell_voltage
 
-    def get_highest_cell_voltage(self) -> tuple:
+    def get_highest_cell_voltage(self) -> (int, float):
         """
         """
         highest_cell = self.cell_voltage.index(max(self.cell_voltage))
         highest_cell_voltage = self.cell_voltage[highest_cell]
         return highest_cell, highest_cell_voltage
 
-    def get_lowest_cell_temperature(self) -> tuple:
+    def get_lowest_cell_temperature(self) -> (int, float):
         """
         """
         lowest_cell = self.temperature.index(min(self.temperature))
         lowest_cell_temp = self.temperature[lowest_cell]
         return lowest_cell, lowest_cell_temp
 
-    def get_highest_cell_temperature(self) -> tuple:
+    def get_highest_cell_temperature(self) -> (int, float):
         """
         """
         highest_cell = self.temperature.index(max(self.temperature))

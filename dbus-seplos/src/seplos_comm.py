@@ -35,7 +35,7 @@ class Comm:
         self.serial_if = serial_if
         self.address = address
 
-    def read_serial_data(self, command: bytes, response_length: int) -> tuple[bool, bytes]:
+    def read_serial_data(self, command: bytes, response_length: int) -> (bool, bytes):
         """
         """
         retries = self.NUMBER_OF_RETRIES

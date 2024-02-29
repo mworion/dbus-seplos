@@ -90,7 +90,7 @@ class SeplosBattery:
         """
         return f'{self.HARDWARE_VERSION}'
 
-    def read_protocol_data(self) -> tuple[bool, bytes]:
+    def read_protocol_data(self) -> (bool, bytes):
         """
         """
         info = f'{self.comm.address:02X}'.encode()
@@ -101,7 +101,7 @@ class SeplosBattery:
             logger.error(f'Failed to read protocol data from {self.comm.address}')
         return ok, data
 
-    def read_vendor_data(self) -> tuple[bool, bytes]:
+    def read_vendor_data(self) -> (bool, bytes):
         """
         Is ASCII string
         1102-LN12..CAN:Victron
@@ -114,7 +114,7 @@ class SeplosBattery:
             logger.error(f'Failed to read vendor data from {self.comm.address}')
         return ok, data
 
-    def read_telemetry_data(self) -> tuple[bool, bytes]:
+    def read_telemetry_data(self) -> (bool, bytes):
         """
         """
         info = f'{self.comm.address:02X}'.encode()
@@ -133,7 +133,7 @@ class SeplosBattery:
             self.telemetry.decode_data(result_telemetry)
         return ok
 
-    def read_alarm_data(self) -> tuple[bool, bytes]:
+    def read_alarm_data(self) -> (bool, bytes):
         """
         """
         info = f'{self.comm.address:02X}'.encode()

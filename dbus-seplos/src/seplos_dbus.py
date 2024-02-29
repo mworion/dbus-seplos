@@ -66,7 +66,7 @@ class DBUS_SEPLOS:
                 f'com.victronenergy.battery.{battery.unique_identifier()}',
                 get_bus())
 
-    def get_role_instance(self, i: int) -> tuple:
+    def get_role_instance(self, i: int) -> (int, int):
         """
         """
         val = self.settings[i]['instance'].split(':')
@@ -81,7 +81,7 @@ class DBUS_SEPLOS:
             logger.info(f'Changed DeviceInstance = {instance:d}')
         return True
 
-    def setup_instance(self, i: int) -> tuple:
+    def setup_instance(self, i: int) -> None:
         """
         """
         bms_id = self.battery[i].unique_identifier()
