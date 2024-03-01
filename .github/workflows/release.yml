@@ -18,16 +18,9 @@ jobs:
 
       - name: build release archive
         run: |
-          find . -type f -name "*.py" -exec chmod +x {} \;
-          find . -type f -name "*.sh" -exec chmod +x {} \;
-          find . -type f -name "run" -exec chmod +x {} \;
-          tar -czvf dbus-seplos.tar.gz \
-            --mode='a+rwX' \
-            --exclude __pycache__ \
-            dbus-seplos/ \
-            rc/
+          ./makeself.sh dbus-seplos dbus-seplos.sh "(C) MW 2024" ./dbus-seplos/scripts/copy_target.sh
 
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
-          files: dbus-seplos.tar.gz
+          files: dbus-seplos.sh

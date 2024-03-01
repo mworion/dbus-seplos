@@ -26,6 +26,7 @@
 echo "Install dbus-seplos"
 # remount rw
 bash /opt/victronenergy/swupdate-scripts/remount-rw.sh
+bash
 
 # remove old symlinks
 rm -rf /opt/victronenergy/service-templates/dbus-seplos
