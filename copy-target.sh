@@ -26,5 +26,4 @@
 echo "Copy dbus-seplos"
 mv ./dbus-seplos /data/etc
 rm dbus-seplos.tar.gz
-cd /data/etc/dbus-seplos/scripts
 echo "Copy dbus-seplos done"
