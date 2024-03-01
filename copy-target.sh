@@ -24,5 +24,7 @@
 ###########################################################
 
 echo "Copy dbus-seplos"
-cp -r ./dbus-seplos /data/etc
+mv ./dbus-seplos /data/etc
+rm dbus-seplos.tar.gz
+cd /data/etc/dbus-seplos/scripts
 echo "Copy dbus-seplos done"
