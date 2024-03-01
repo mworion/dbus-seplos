@@ -50,16 +50,15 @@ jobs:
 
       - name: build release archive
         run: |
-          ./makeself.sh dbus-seplos dbus-seplos.run "(C) MW 2024" ./dbus-seplos/scripts/copy-target.sh
+          ./makeself.sh dbus-seplos dbus-seplos.tar.gz "(C) MW 2024" ./dbus-seplos/scripts/copy-target.sh
 
       - name: check files
         run: |
-          chmod +x dbus-seplos.run
           ls -la
 
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
-          files: dbus-seplos.run
+          files: dbus-seplos.tar.gz
         env:
           GITHUB_REPOSITORY: my_gh_org/my_gh_repo
