@@ -60,3 +60,5 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           files: dbus-seplos.sh
+        env:
+          GITHUB_REPOSITORY: my_gh_org/my_gh_repo
