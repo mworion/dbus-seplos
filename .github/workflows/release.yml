@@ -52,9 +52,7 @@ jobs:
             --mode='a+rwX' \
             --exclude __pycache__ \
             --exclude test/*.py \
-          dbus-seplos/ \
-          copy-target.sh
-
+          dbus-seplos/
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
