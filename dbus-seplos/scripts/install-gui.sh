@@ -35,9 +35,4 @@ cp /data/etc/dbus-seplos/qml/PageBatteryCellVoltages.qml /opt/victronenergy/gui/
 # copy new PageBatteryTemperatures
 cp /data/etc/dbus-seplos/qml/PageBatteryTemperatures.qml /opt/victronenergy/gui/qml/
 
-# stop gui
-svc -d /service/start-gui
-# sleep 1 sec
-sleep 1
-# start gui
-svc -u /service/start-gui
+bash /data/etc/dbus-seplos/scripts/restart-gui.sh

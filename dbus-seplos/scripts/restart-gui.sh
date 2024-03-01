@@ -23,5 +23,13 @@
 #
 ###########################################################
 
-# kill driver, if running. It gets restarted by the service daemon
-pkill -f "python .*/seplos_run.py"
+if [ -d /service/start-gui ];
+then
+  svc -d /service/start-gui
+  sleep 1
+  svc -u /service/start-gui
+else
+  svc -d /service/gui
+  sleep 1
+  svc -u /service/gui
+fi

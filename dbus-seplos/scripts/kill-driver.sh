@@ -23,23 +23,7 @@
 #
 ###########################################################
 
-# disable driver
-bash /data/etc/dbus-seplos/scripts/disable.sh
-
-# remove copied files
-rm -rf /service/dbus-seplos.*
-
-# remove symlinks (soft links)
-rm -rf /opt/victronenergy/dbus-seplos
-rm -rf /opt/victronenergy/service-templates/dbus-seplos
-
-# restore GUI changes
-bash /data/etc/dbus-seplos/scripts/restore-gui.sh
-
-# remove install-script from rc.local
-filename=/data/rc.local
-if [ -f "$filename" ];
-then
-  sed -i "/bash \/data\/etc\/dbus-seplos\/scripts\/install.sh/d" $filename
-fi
-
+# kill driver, if running. It gets restarted by the service daemon
+pkill -f "supervise dbus-seplos.*"
+pkill -f "multilog .* /var/log/dbus-seplos.*"
+pkill -f "python .*/seplos_run.py"

@@ -29,7 +29,5 @@ bash /opt/victronenergy/swupdate-scripts/remount-rw.sh
 # remove services
 rm -rf /service/dbus-seplos.*
 
-# kill driver, if running
-pkill -f "supervise dbus-seplos.*"
-pkill -f "multilog .* /var/log/dbus-seplos.*"
-pkill -f "python .*/dbus-seplos.py"
+# kill driver, if running. It gets restarted by the service daemon
+bash /data/etc/dbus-seplos/scripts/kill-driver.sh

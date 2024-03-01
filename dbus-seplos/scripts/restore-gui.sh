@@ -29,9 +29,4 @@ if [ -f /opt/victronenergy/gui/qml/PageBattery.qml.backup ]; then
     echo "PageBattery.qml was restored."
 fi
 
-#stop gui
-svc -d /service/gui
-#sleep 1 sec
-sleep 1
-#start gui
-svc -u /service/gui
+bash /data/etc/dbus-seplos/scripts/restart-gui.sh

@@ -29,6 +29,7 @@ class Telemetry:
     """
     """
     # data offsets
+    cell_number_offset = 4
     cell_voltage_offset = 6
     temps_offset = 72
     dis_charge_current_offset = 96
@@ -103,7 +104,7 @@ class Telemetry:
     def decode_data(self, data) -> None:
         """
         """
-        self.number_of_cells = int_from_ascii(data=data, offset=4, size=2)
+        self.number_of_cells = int_from_ascii(data=data, offset=self.cell_number_offset, size=2)
 
         for i in range(self.number_of_cells):
             voltage = int_from_ascii(data, self.cell_voltage_offset + i * 4) / 1000
