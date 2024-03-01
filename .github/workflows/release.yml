@@ -23,6 +23,10 @@
 
 name: Build-Release
 
+concurrency:
+  group: ${{ github.ref }}-${{ github.workflow }}
+  cancel-in-progress: true
+  
 on:
   push:
     tags:
@@ -41,7 +45,7 @@ jobs:
 
       - name: build release archive
         run: |
-          ./makeself.sh dbus-seplos dbus-seplos.sh "(C) MW 2024" ./dbus-seplos/scripts/copy_target.sh
+          ./makeself.sh dbus-seplos dbus-seplos.sh "(C) MW 2024" ./dbus-seplos/scripts/copy-target.sh
 
       - name: Release
         uses: softprops/action-gh-release@v1
