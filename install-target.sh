@@ -42,5 +42,5 @@ tar -xvzf dbus-seplos.tar.gz
 rm -rf /data/etc/dbus-seplos
 mv ./dbus-seplos /data/etc
 rm dbus-seplos.tar.gz
-./data/etc/dbus-seplos/scripts/install.sh
+/data/etc/dbus-seplos/scripts/install.sh
 echo "Download and copy dbus-seplos done"
