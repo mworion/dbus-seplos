@@ -23,7 +23,9 @@
 #
 ###########################################################
 
-echo "Copy dbus-seplos"
+echo "Download latest dbus-seplos"
+curl -s https://api.github.com/repos/mworion/dbus-seplos/releases/latest | grep "browser_download_url.*gz" | cut -d : -f 2,3 | tr -d \" | wget -qi -
+tar -xvzf dbus-seplos.tar.gz
 mv ./dbus-seplos /data/etc
 rm dbus-seplos.tar.gz
-echo "Copy dbus-seplos done"
+echo "Download and copy dbus-seplos done"
