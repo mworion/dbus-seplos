@@ -23,6 +23,9 @@
 #
 ###########################################################
 
+echo
+echo
+echo
 echo "o-o   o--o  o   o  o-o            "
 echo "|  \  |   | |   | |               "
 echo "|   O O--o  |   |  o-o            "
@@ -35,6 +38,7 @@ echo "|     |    |   | |    o   o |     "
 echo " o-o  O-o  O--o  |    |   |  o-o  "
 echo "    | |    |     |    o   o     | "
 echo "o--o  o--o o     O---o o-o  o--o  "
+echo "                                  "
 echo "                                  "
 echo "Download latest dbus-seplos"
 curl -s https://api.github.com/repos/mworion/dbus-seplos/releases/latest | grep "browser_download_url.*gz" | cut -d : -f 2,3 | tr -d \" | wget -qi -
