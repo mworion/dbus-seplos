@@ -21,7 +21,7 @@
 #
 ###########################################################
 
-name: Build-Release
+name: BuildRelease
 
 concurrency:
   group: ${{ github.ref }}-${{ github.workflow }}

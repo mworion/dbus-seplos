@@ -21,7 +21,7 @@
 #
 ###########################################################
 
-name: "CodeChecks"
+name: CodeChecks
 
 concurrency:
   group: ${{ github.ref }}-${{ github.workflow }}
