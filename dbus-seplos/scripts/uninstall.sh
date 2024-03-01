@@ -23,6 +23,7 @@
 #
 ###########################################################
 
+echo "Install dbus-seplos"
 # disable driver
 bash /data/etc/dbus-seplos/scripts/disable.sh
 
@@ -42,4 +43,6 @@ if [ -f "$filename" ];
 then
   sed -i "/bash \/data\/etc\/dbus-seplos\/scripts\/install.sh/d" $filename
 fi
+
+echo "Uninstalled dbus-seplos"
 

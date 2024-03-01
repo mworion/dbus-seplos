@@ -23,6 +23,7 @@
 #
 ###########################################################
 
+echo "Disable dbus-seplos driver"
 # handle read only mounts
 bash /opt/victronenergy/swupdate-scripts/remount-rw.sh
 
@@ -31,3 +32,5 @@ rm -rf /service/dbus-seplos.*
 
 # kill driver, if running. It gets restarted by the service daemon
 bash /data/etc/dbus-seplos/scripts/kill-driver.sh
+
+echo "Disabled dbus-seplos driver"

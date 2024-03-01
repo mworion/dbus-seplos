@@ -23,6 +23,9 @@
 #
 ###########################################################
 
+echo "Restart GUI"
+
+# restart gui, there were two different services in the past
 if [ -d /service/start-gui ];
 then
   svc -d /service/start-gui

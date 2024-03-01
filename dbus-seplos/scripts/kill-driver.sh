@@ -24,6 +24,7 @@
 ###########################################################
 
 # kill driver, if running. It gets restarted by the service daemon
+echo "Kill dbus-seplos driver"
 pkill -f "supervise dbus-seplos.*"
 pkill -f "multilog .* /var/log/dbus-seplos.*"
 pkill -f "python .*/seplos_run.py"

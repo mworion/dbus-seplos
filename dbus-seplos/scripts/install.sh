@@ -23,6 +23,7 @@
 #
 ###########################################################
 
+echo "Install dbus-seplos"
 # remount rw
 bash /opt/victronenergy/swupdate-scripts/remount-rw.sh
 
@@ -61,3 +62,5 @@ fi
 
 # kill driver, if running. It gets restarted by the service daemon
 bash /data/etc/dbus-seplos/scripts/kill-driver.sh
+
+echo "Installed dbus-seplos"
