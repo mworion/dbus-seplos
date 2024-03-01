@@ -52,7 +52,8 @@ jobs:
             --mode='a+rwX' \
             --exclude __pycache__ \
             --exclude test/*.py \
-          dbus-seplos/
+          dbus-seplos
+          
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
