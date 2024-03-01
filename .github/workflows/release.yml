@@ -45,6 +45,8 @@ jobs:
 
       - name: build release archive
         run: |
+          chmod +x ./make*.sh
+          ls -la
           ./makeself.sh dbus-seplos dbus-seplos.sh "(C) MW 2024" ./dbus-seplos/scripts/copy-target.sh
 
       - name: Release
