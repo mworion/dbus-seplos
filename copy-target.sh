@@ -23,9 +23,9 @@
 #
 ###########################################################
 
-echo
-echo
-echo
+echo "                                  "
+echo "                                  "
+echo "                                  "
 echo "o-o   o--o  o   o  o-o            "
 echo "|  \  |   | |   | |               "
 echo "|   O O--o  |   |  o-o            "
@@ -46,4 +46,8 @@ tar -xvzf dbus-seplos.tar.gz
 rm -rf /data/etc/dbus-seplos
 mv ./dbus-seplos /data/etc
 rm dbus-seplos.tar.gz
+echo "                                  "
+echo "                                  "
 echo "Download and copy dbus-seplos done"
+echo "                                  "
+echo "                                  "
