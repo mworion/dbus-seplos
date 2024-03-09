@@ -1,9 +1,7 @@
-Beta versions of MW4
---------------------
+Released versions of dbus-seplos
+--------------------------------
+Version 0.0.3
+^^^^^^^^^^^^^
 
-- none so far
+- initial release
 
-Released versions of MW4
-------------------------
-Version 3.0
-^^^^^^^^^^^
