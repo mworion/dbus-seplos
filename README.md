@@ -4,6 +4,8 @@ dbus-seplos got it's ideas from dbus-serialbattery and seplos-mqtt-remote-485
 projects. Many thanks to the authors of these projects! Still dbus-seplos is 
 written from scratch and is not a fork of these projects.
 
+CPU usage on Cerbo GX: 2% (1 core).
+
 Documentation:
 --------------
 There is a documentation available for MW4:
