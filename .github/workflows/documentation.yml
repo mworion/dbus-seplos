@@ -22,7 +22,7 @@ jobs:
       - name: check files
         run: |
           ls -la
-          ls -la _build
+          ls -la doc/build
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
