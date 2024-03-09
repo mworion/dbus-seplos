@@ -16,8 +16,8 @@ Raspberry Pi running the Venus OS image).
 .. warning:: Expert functionality! You should be sure about what you are doing.
              I do not take any responsibility for any damage or loss of data.
 
-Content
-^^^^^^^
+Content index
+^^^^^^^^^^^^
 .. toctree::
     :maxdepth: 2
 
