@@ -16,6 +16,16 @@ Raspberry Pi running the Venus OS image).
 .. warning:: Expert functionality! You should be sure about what you are doing.
              I do not take any responsibility for any damage or loss of data.
 
+Content
+^^^^^^^
+.. toctree::
+    :maxdepth: 2
+
+    wiring/index
+    installation/index
+    usage/index
+    changelog/index
+
 Known limitations
 -----------------
 This driver is developed and tested on a seplos v2 (FW 16.06) and a
@@ -53,12 +63,3 @@ don‘t zip them to one file! I need them separated and zipped causes more work.
 
 If changes are made due to a feedback, new releases will have a link to the closed
 issues on GitHub.
-
-
-.. toctree::
-    :maxdepth: 2
-
-    wiring/index
-    installation/index
-    usage/index
-    changelog/index
