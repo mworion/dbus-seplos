@@ -8,7 +8,7 @@ CPU usage on Cerbo GX: 2% (1 core).
 
 Documentation:
 --------------
-There is a documentation available for MW4:
+There is a documentation available for dbus-seplos:
 https://mworion.github.io/dbus-seplos/index.html
 
 Finally:
