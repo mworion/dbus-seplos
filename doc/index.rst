@@ -10,11 +10,24 @@ the seplos BMS and try to gather all further detailed information from the BMS
 like cell voltages and offer them in dbus of a venus system. Further it will add
 and change some venus UI pages to show these information.
 
-Overview
---------
+This is a driver for Venus OS devices (any GX device sold by Victron or a
+Raspberry Pi running the Venus OS image).
+
+.. warning:: Expert functionality! You should be sure about what you are doing.
+             I do not take any responsibility for any damage or loss of data.
 
 Known limitations
 -----------------
+This driver is developed and tested on a seplos v2 (FW 16.06) and a
+Venus GX (FW 3.x). It will not run on Venus OS version lower to 3.0 and does not
+support beta versions with the new UI from 3.20 on.
+
+The driver is not tested on a seplos v3 system. There definitely the wiring has
+to be adjusted and checked if the driver is working.
+
+The installation of the driver might interfere with other drivers. Especially
+having dbus-serial-battery installed at the same time causes conflicts
+
 
 Reporting issues
 ----------------
@@ -31,7 +44,6 @@ recommendations how to feed back.
 
           https://github.com/mworion/dbus-seplos/discussions
 
-
 In case of a bug report please have a good description (maybe a screenshot if it‘s
 related to GUI) and add the log file(s). Normally you just could drop the log file
 (or PNG in case of a screen shot) directly to the webpage issues on GitHub. In
@@ -46,5 +58,6 @@ issues on GitHub.
 .. toctree::
     :maxdepth: 2
 
-    changelog/index
     wiring/index
+    installation/index
+    changelog/index
