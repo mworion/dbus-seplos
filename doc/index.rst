@@ -60,4 +60,5 @@ issues on GitHub.
 
     wiring/index
     installation/index
+    usage/index
     changelog/index

@@ -68,14 +68,14 @@ in the same directory:
 
    /data/etc/dbus-seplos/scripts
 
-Settings:
-^^^^^^^^^
+Settings
+^^^^^^^^
 
 Basically no settings could be made as the driver is designed to be plug and play.
 
 
-Behavior:
-^^^^^^^^^
+Behavior
+^^^^^^^^
 
 dbus-seplos will start automatically after installation. The master battery will
 be detected and the driver will start to collect data. If you have multiple
