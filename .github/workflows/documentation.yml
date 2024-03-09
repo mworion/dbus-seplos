@@ -6,18 +6,19 @@ permissions:
   contents: write
 
 jobs:
-  docs:
+  Generate Pages:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
+        with:
+          python-version: 3.12
       - name: Install dependencies
         run: |
           pip install sphinx sphinx_rtd_theme alabaster rst2pdf
       - name: Sphinx build
         run: |
-          sphinx-build doc _build
-          
+          sphinx-build doc doc/build
       - name: check files
         run: |
           ls -la
@@ -28,5 +29,5 @@ jobs:
         with:
           publish_branch: gh-pages
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: _build/
+          publish_dir: doc/build
           force_orphan: true
