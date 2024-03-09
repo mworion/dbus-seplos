@@ -28,7 +28,7 @@ permissions:
   contents: write
 
 jobs:
-  doccumentation:
+  documentation:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
