@@ -18,7 +18,9 @@ If you have a multiple box system, you keep the addresses and the wiring of the
 other boxes to the first one like before. No change in DIP switching is needed.
 
 I use the following splitter :
+
 https://www.amazon.de/dp/B002XRQHSC?ref_=cm_sw_r_cp_ud_dp_1SV54ZKSBCX76ZBWJSTK&th=1
+
 which worked for me perfectly.
 
 Step 2:

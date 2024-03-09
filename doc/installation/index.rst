@@ -29,6 +29,8 @@ The installer will download the latest released version of the driver and instal
 it on your system. The location of the install will be in
 
 .. code-block:: bash
+    number-lines:
+
    /data/etc/dbus-seplos
 
 The installer will also create a service file for the driver and enable it. All
@@ -37,6 +39,8 @@ the installations to the system will be done from this origin with symlinks.
 In addition the installer will add lines to
 
 .. code-block:: bash
+    number-lines:
+
    /data/rc.local
 
 to keep the installation persistent over reboots und firmware updates of the venus
@@ -45,6 +49,8 @@ system. Uninstall will remove this entry.
 Furthermore the installer will add the following file:
 
 .. code-block:: bash
+    number-lines:
+
    /data/conf/serial-starter.d/dbus-seplos.conf
 
 to enable the serial starter deamon to recognize and integrate dbus-seplos
@@ -58,6 +64,8 @@ You could customize the installation by editing the script. All scripts are loca
 in the same directory:
 
 .. code-block:: bash
+    number-lines:
+
    /data/etc/dbus-seplos/scripts
 
 Settings:
