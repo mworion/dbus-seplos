@@ -17,11 +17,11 @@ actively change values. Just transferring BMS data to dbus.
     :align: center
     :scale: 71%
 
-.. image:: image/cell_voltage.png
+.. image:: image/cell_voltages.png
     :align: center
     :scale: 71%
 
-.. image:: image/cell_temp.png
+.. image:: image/cell_temps.png
     :align: center
     :scale: 71%
 
