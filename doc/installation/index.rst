@@ -74,4 +74,14 @@ Settings:
 Basically no settings could be made as the driver is designed to be plug and play.
 
 
+Behavior:
+^^^^^^^^^
+
+dbus-seplos will start automatically after installation. The master battery will
+be detected and the driver will start to collect data. If you have multiple
+batteries, dbus-seplos will detect them and add as much Slave devices as needed.
+The addresses selected with the dip switches on the hardware will be used to
+identify the driver battery connection. Any change in DIP settings will change
+the order and ID of the driver data stored in the dbus system.
+
 
