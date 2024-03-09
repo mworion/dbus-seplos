@@ -1,7 +1,9 @@
 Usage
 =====
 
-Once installed and running, the dbus-seplos is shown in the Venus device:
+Once installed and running, the dbus-seplos is shown in the Venus device beside
+the CAN driver, which handles all active topics. dbus-seplos does not write or
+actively change values. Just transferring BMS data to dbus.
 
 .. image:: image/overview.png
     :align: center
