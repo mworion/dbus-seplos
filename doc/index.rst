@@ -1,7 +1,7 @@
 Welcome to dbus-seplos !
 ========================
 
-.. image:: image/overview.png
+.. image:: image/main.png
     :align: center
     :scale: 71%
 
