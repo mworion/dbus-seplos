@@ -8,7 +8,7 @@ Driver installation
           battery system. You should always have a working BMS based on CAN
           installed and active.
 
-.. warning:: The driver is only tested with Venus OS > 3.00 and < v3.20. It will
+.. warning:: The driver is only tested with Venus OS > 3.00 and < v3.3. It will
              not work with Venus OS other than that. Seconly it is only tested
              with Seplos BMS hardware v2 and firmware 16.06. I do not know if it
              works with version 3 of the hardware.
