@@ -30,6 +30,9 @@ bash /data/etc/dbus-seplos/scripts/disable.sh
 # remove copied files
 rm -rf /service/dbus-seplos.*
 
+# remove logs
+rm -rf /var/log/dbus-seplos.ttyUSB*
+
 # remove symlinks (soft links)
 rm -rf /opt/victronenergy/dbus-seplos
 rm -rf /opt/victronenergy/service-templates/dbus-seplos

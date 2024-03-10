@@ -25,7 +25,7 @@ import logging
 import time
 import datetime
 
-DRIVER_VERSION = '0.0.3'
+DRIVER_VERSION = '0.1.0'
 
 logging.Formatter.converter = time.gmtime
 timeTag = datetime.datetime.utcnow().strftime('%Y-%m-%d')
