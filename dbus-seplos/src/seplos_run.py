@@ -55,7 +55,7 @@ def main():
     whole lifecycle.
     """
     port = get_port()
-    time.sleep(10)
+    time.sleep(3)
     if not os.path.exists(port):
         logger.error(f'Port {port} does not exist')
         os_exit(1)

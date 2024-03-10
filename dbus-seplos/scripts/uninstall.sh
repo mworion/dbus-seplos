@@ -33,6 +33,13 @@ rm -rf /service/dbus-seplos.*
 # remove logs
 rm -rf /var/log/dbus-seplos.ttyUSB*
 
+# remove serial starter extension
+filename=/data/conf/serial-starter.d/dbus-seplos.conf
+if [ -f "$filename" ];
+then
+    rm "$filename"
+fi
+
 # remove symlinks (soft links)
 rm -rf /opt/victronenergy/dbus-seplos
 rm -rf /opt/victronenergy/service-templates/dbus-seplos

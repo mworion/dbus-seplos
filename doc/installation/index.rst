@@ -8,7 +8,7 @@ Driver installation
           installed and active.
 
 .. warning:: The driver is only tested with Venus OS > 3.00 and < v3.3. It will
-             not work with Venus OS other than that. Seconly it is only tested
+             not work with Venus OS other than that. Secondly it is only tested
              with Seplos BMS hardware v2 and firmware 16.06. I do not know if it
              works with version 3 of the hardware.
 
@@ -49,7 +49,7 @@ Furthermore the installer will add the following file:
 
    /data/conf/serial-starter.d/dbus-seplos.conf
 
-to enable the serial starter deamon to recognize and integrate dbus-seplos
+to enable the serial starter daemon to recognize and integrate dbus-seplos
 auto-detect for the RS-485 interface.
 
 Last the installer will backup / add some files to the GUI system to make the GUI
