@@ -41,8 +41,8 @@ then
 fi
 
 # remove symlinks (soft links)
-rm -rf /opt/victronenergy/dbus-seplos
 rm -rf /opt/victronenergy/service-templates/dbus-seplos
+rm -rf /opt/victronenergy/dbus-seplos
 
 # restore GUI changes
 bash /data/etc/dbus-seplos/scripts/restore-gui.sh
