@@ -37,13 +37,15 @@ chmod +x /data/etc/dbus-seplos/src/*.py
 chmod +x /data/etc/dbus-seplos/service/run
 chmod +x /data/etc/dbus-seplos/service/log/run
 
-# install by setting symlinks (soft links)
-ln -s /data/etc/dbus-seplos/service /opt/victronenergy/service-templates/dbus-seplos
-ln -s /data/etc/dbus-seplos /opt/victronenergy/dbus-seplos
+# install by copying files
+mkdir /opt/victronenergy/service-templates/dbus-seplos
+cp -rf /data/etc/dbus-seplos/service/* /opt/victronenergy/service-templates/dbus-seplos
+mkdir /opt/victronenergy/dbus-seplos
+cp -rf /data/etc/dbus-seplos /opt/victronenergy
 
 # enable driver for serial-starter
 mkdir -p /data/conf/serial-starter.d
-cp -rf /data/etc/dbus-seplos/scripts/dbus-seplos.conf /data/conf/serial-starter.d/dbus-seplos.conf
+cp /data/etc/dbus-seplos/scripts/dbus-seplos.conf /data/conf/serial-starter.d/dbus-seplos.conf
 
 # install gui qml
 bash /data/etc/dbus-seplos/scripts/install-gui.sh
