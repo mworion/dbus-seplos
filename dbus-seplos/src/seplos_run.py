@@ -25,10 +25,7 @@ import sys
 import os
 import time
 from dbus.mainloop.glib import DBusGMainLoop
-if sys.version_info.major == 2:
-    import gobject
-else:
-    from gi.repository import GLib as gobject
+from gi.repository import GLib
 from seplos_dbus import DBUS_SEPLOS
 from seplos_pack import SeplosPack
 from seplos_utils import logger
@@ -65,13 +62,13 @@ def main():
         sys.exit(1)
 
     DBusGMainLoop(set_as_default=True)
-    main_loop = gobject.MainLoop()
+    main_loop = GLib.MainLoop()
     helper = DBUS_SEPLOS(seplos_pack)
     if not helper.setup_vedbus_pack():
         logger.error('Failed to setup dbus')
         sys.exit(1)
 
-    gobject.timeout_add(seplos_pack.POLL_INTERVAL,
+    GLib.timeout_add(seplos_pack.POLL_INTERVAL,
                         lambda: helper.publish_battery_pack(main_loop))
     logger.info(f'seplos-dbus started on port {port}')
 

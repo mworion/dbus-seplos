@@ -73,7 +73,7 @@ class DBUS_SEPLOS:
         # logger.info("DeviceInstance = %d", int(val[1]))
         return val[0], int(val[1])
 
-    def handlechangedvalue(self, setting, old_value, new_value) -> bool:
+    def handle_changed_value(self, setting, old_value, new_value) -> bool:
         """
         """
         if setting == 'instance':
@@ -91,7 +91,7 @@ class DBUS_SEPLOS:
                                  default_instance, 0, 0]}
 
         self.settings[i] = SettingsDevice(get_bus(), settings,
-                                          self.handlechangedvalue)
+                                          self.handle_changed_value)
         self.battery[i].role, _ = self.get_role_instance(i)
         return
 
