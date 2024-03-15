@@ -69,7 +69,7 @@ def main():
         sys.exit(1)
 
     GLib.timeout_add(seplos_pack.POLL_INTERVAL,
-                        lambda: helper.publish_battery_pack(main_loop))
+                     lambda: helper.publish_battery_pack(main_loop))
     logger.info(f'seplos-dbus started on port {port}')
 
     try:
