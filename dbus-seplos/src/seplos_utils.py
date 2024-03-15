@@ -29,7 +29,7 @@ DRIVER_VERSION = '0.1.2'
 
 logging.Formatter.converter = time.gmtime
 timeTag = datetime.datetime.utcnow().strftime('%Y-%m-%d')
-logging.basicConfig(level=logging.DEBUG,
+logging.basicConfig(level=logging.WARNING,
                     format='[%(asctime)s.%(msecs)03d]'
                            '[%(levelname)1.1s]'
                            '[%(filename)15.15s]'
