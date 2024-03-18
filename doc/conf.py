@@ -55,7 +55,7 @@ master_doc = 'index'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = ['rst2pdf.pdfbuilder', 'sphinx.ext.autosectionlabel',
-              'sphinx.ext.githubpages']
+              'sphinx.ext.githubpages', 'sphinx_copybutton']
 
 # drawio_binary_path = '/Applications/draw.io.app/Contents/MacOS/draw.io'
 # diagrams_exporter_path = './'
