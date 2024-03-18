@@ -17,11 +17,18 @@ Install or update over SSH
 .. note:: Requires root access.
 
 Log into your Venus OS device using a SSH client like Putty or bash and run
-these commands to start the installer:
+these commands to start the installer including GUI:
 
 .. code-block:: bash
 
-   wget -O /tmp/install.sh https://raw.githubusercontent.com/mworion/dbus-seplos/master/install-target.sh
+   wget -O /tmp/install.sh https://raw.githubusercontent.com/mworion/dbus-seplos/master/install-target-gui.sh
+   bash /tmp/install.sh
+
+For a headless installation, please select the following codeblock.
+
+.. code-block:: bash
+
+   wget -O /tmp/install.sh https://raw.githubusercontent.com/mworion/dbus-seplos/master/install-target-headless.sh
    bash /tmp/install.sh
 
 The installer will download the latest released version of the driver and installs
