@@ -24,7 +24,8 @@ these commands to start the installer including GUI:
    wget -O /tmp/install.sh https://raw.githubusercontent.com/mworion/dbus-seplos/master/install-target-gui.sh
    bash /tmp/install.sh
 
-For a headless installation, please select the following codeblock.
+For those, who want to just use the driver without impacting the GUI, please use the 
+headless installation:
 
 .. code-block:: bash
 
