@@ -20,8 +20,18 @@
 # Licence MIT
 #
 ###########################################################
+import sys
+import os
+from unittest.mock import Mock, patch, MagicMock
+import unittest.mock as mock
+import pytest
 
-from src.seplos_run import get_port
+sys.modules['dbus.mainloop.glib'] = Mock()
+sys.modules['gi.repository'] = Mock()
+sys.modules['seplos_dbus'] = Mock()
+
+from src.seplos_run import get_port, main
+from src.seplos_pack import SeplosPack
 
 
 def test_get_port_1():
@@ -34,3 +44,79 @@ def test_get_port_2():
     parameters = ['seplos_run.py']
     result = get_port(parameters)
     assert result == ''
+
+
+def test_main_1():
+    parameters = []
+    with pytest.raises(SystemExit) as e:
+        with mock.patch.object(os.path, 'exists',
+                               return_value=False):
+            main(parameters)
+            assert e.type == SystemExit
+            assert e.value.code == 1
+
+
+class Test2:
+    seplos_batteries = []
+
+    def __init__(self, battery_port):
+        pass
+
+
+@patch('src.seplos_run.SeplosPack', Test2)
+def test_main_2():
+    parameters = []
+
+    with pytest.raises(SystemExit) as e:
+        with mock.patch.object(os.path, 'exists',
+                               return_value=True):
+            main(parameters)
+            assert e.type == SystemExit
+            assert e.value.code == 1
+
+
+class Test3:
+    seplos_batteries = [1]
+    POLL_INTERVAL = 3000
+
+    def __init__(self, battery_port):
+        pass
+
+
+class Test4:
+    def __init__(self, dummy):
+        pass
+
+    def setup_vedbus_pack(self):
+        return False
+
+
+@patch('src.seplos_run.SeplosPack', Test3)
+@patch('src.seplos_run.DBUS_SEPLOS', Test4)
+def test_main_3():
+    parameters = []
+
+    with pytest.raises(SystemExit) as e:
+        with mock.patch.object(os.path, 'exists',
+                               return_value=True):
+            main(parameters)
+            assert e.type == SystemExit
+            assert e.value.code == 1
+
+
+class Test5:
+    def __init__(self, dummy):
+        pass
+
+    def setup_vedbus_pack(self):
+        return True
+
+
+@patch('src.seplos_run.SeplosPack', Test3)
+@patch('src.seplos_run.DBUS_SEPLOS', Test5)
+def test_main_4():
+    parameters = []
+
+    with mock.patch.object(os.path, 'exists',
+                           return_value=True):
+        main(parameters)

@@ -61,19 +61,16 @@ def main(parameters):
 
     DBusGMainLoop(set_as_default=True)
     main_loop = GLib.MainLoop()
-    helper = DBUS_SEPLOS(seplos_pack)
-    if not helper.setup_vedbus_pack():
+    service_pack = DBUS_SEPLOS(seplos_pack)
+    if not service_pack.setup_vedbus_pack():
         logger.error('Failed to setup dbus')
         sys.exit(1)
 
     GLib.timeout_add(seplos_pack.POLL_INTERVAL,
-                     lambda: helper.publish_battery_pack(main_loop))
+                     lambda: service_pack.publish_battery_pack(main_loop))
     logger.info(f'seplos-dbus started on port {port}')
 
-    try:
-        main_loop.run()
-    except KeyboardInterrupt:
-        pass
+    main_loop.run()
     logger.info('seplos-dbus stopped')
 
 
