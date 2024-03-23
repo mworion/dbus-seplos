@@ -22,7 +22,7 @@
 ###########################################################
 import sys
 import os
-from unittest.mock import Mock, patch, MagicMock
+from unittest.mock import Mock, patch
 import unittest.mock as mock
 import pytest
 
@@ -31,7 +31,6 @@ sys.modules['gi.repository'] = Mock()
 sys.modules['seplos_dbus'] = Mock()
 
 from src.seplos_run import get_port, main
-from src.seplos_pack import SeplosPack
 
 
 def test_get_port_1():
