@@ -76,6 +76,8 @@ class Telemetry:
     def get_lowest_cell_voltage(self) -> (int, float):
         """
         """
+        if None in self.cell_voltage:
+            return None, None
         lowest_cell = self.cell_voltage.index(min(self.cell_voltage))
         lowest_cell_voltage = self.cell_voltage[lowest_cell]
         return lowest_cell, lowest_cell_voltage
@@ -83,6 +85,8 @@ class Telemetry:
     def get_highest_cell_voltage(self) -> (int, float):
         """
         """
+        if None in self.cell_voltage:
+            return None, None
         highest_cell = self.cell_voltage.index(max(self.cell_voltage))
         highest_cell_voltage = self.cell_voltage[highest_cell]
         return highest_cell, highest_cell_voltage
@@ -90,6 +94,8 @@ class Telemetry:
     def get_lowest_cell_temperature(self) -> (int, float):
         """
         """
+        if None in self.temperature:
+            return None, None
         lowest_cell = self.temperature.index(min(self.temperature))
         lowest_cell_temp = self.temperature[lowest_cell]
         return lowest_cell, lowest_cell_temp
@@ -97,6 +103,8 @@ class Telemetry:
     def get_highest_cell_temperature(self) -> (int, float):
         """
         """
+        if None in self.temperature:
+            return None, None
         highest_cell = self.temperature.index(max(self.temperature))
         highest_cell_temp = self.temperature[highest_cell]
         return highest_cell, highest_cell_temp
@@ -109,13 +117,19 @@ class Telemetry:
         for i in range(self.number_of_cells):
             voltage = int_from_ascii(data, self.cell_voltage_offset + i * 4) / 1000
             self.cell_voltage[i] = voltage
+
         for i in range(0, 4):
             temp = (int_from_ascii(data, self.temps_offset + i * 4) - 2731) / 10
             self.temperature[i] = temp
 
         self.lowest_cell_vid, self.lowest_cell_voltage = self.get_lowest_cell_voltage()
         self.highest_cell_vid, self.highest_cell_voltage = self.get_highest_cell_voltage()
-        self.delta_cell_voltage = roundSec((self.highest_cell_voltage - self.lowest_cell_voltage), 3)
+
+        if self.lowest_cell_voltage is not None and self.highest_cell_voltage is not None:
+            diff = self.highest_cell_voltage - self.lowest_cell_voltage
+            self.delta_cell_voltage = roundSec(diff, 3)
+        else:
+            self.delta_cell_voltage = None
 
         self.lowest_cell_tid, self.lowest_cell_temperature = self.get_lowest_cell_temperature()
         self.highest_cell_tid, self.highest_cell_temperature = self.get_highest_cell_temperature()
