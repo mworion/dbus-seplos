@@ -5,7 +5,7 @@ Released versions of dbus-seplos
 --------------------------------
 v 0.1.5
 
-- adding headless feature installation
+- cleanup
 
 v 0.1.4
 

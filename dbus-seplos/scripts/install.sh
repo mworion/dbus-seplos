@@ -47,11 +47,9 @@ cp -rf /data/etc/dbus-seplos /opt/victronenergy
 mkdir -p /data/conf/serial-starter.d
 cp /data/etc/dbus-seplos/scripts/dbus-seplos.conf /data/conf/serial-starter.d/dbus-seplos.conf
 
-if [$1 == "gui"]; 
-then
-    # install gui qml
-    bash /data/etc/dbus-seplos/scripts/install-gui.sh
-    echo "Installed GUI"
+# install gui qml
+bash /data/etc/dbus-seplos/scripts/install-gui.sh
+echo "Installed GUI"
 
 # add install-script to rc.local to be ready for firmware update
 filename=/data/rc.local
