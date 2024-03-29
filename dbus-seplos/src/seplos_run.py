@@ -66,7 +66,7 @@ def main(parameters):
         logger.error('Failed to setup dbus')
         sys.exit(1)
 
-    GLib.timeout_add(seplos_pack.POLL_INTERVAL,
+    GLib.timeout_add(seplos_pack.poll_interval,
                      lambda: service_pack.publish_battery_pack(main_loop))
     logger.info(f'seplos-dbus started on port {port}')
 

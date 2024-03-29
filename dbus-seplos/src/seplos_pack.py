@@ -32,7 +32,7 @@ class SeplosPack:
     """
     BATTERY_MASTER_BAUD = 9600
     BATTERY_SLAVE_BAUD = 19200
-    MAX_NUMBER_SLAVE_PACKS = 4
+    MAX_NUMBER_SLAVE_PACKS = 10
     POLL_INTERVAL = 3000
 
     def __init__(self, battery_port: str) -> None:
@@ -41,6 +41,7 @@ class SeplosPack:
         self.battery_port = battery_port
         self.seplos_batteries = []
         self.setup_batteries()
+        self.poll_interval = self.POLL_INTERVAL
 
     def test_and_add_battery(self, serial_if: serial.Serial, address: int = 0) -> bool:
         """
@@ -98,3 +99,5 @@ class SeplosPack:
 
         if self.check_slave():
             logger.info(f'Slave batteries found at {self.battery_port}')
+            numb_batt = len(self.seplos_batteries)
+            self.poll_interval = self.POLL_INTERVAL + 0.5 * (numb_batt - 1)
