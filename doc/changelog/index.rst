@@ -3,6 +3,10 @@ Changelog
 
 Released versions of dbus-seplos
 --------------------------------
+v 0.1.6
+
+- adjusted the polling interval to number of slave devices
+
 v 0.1.5
 
 - cleanup
