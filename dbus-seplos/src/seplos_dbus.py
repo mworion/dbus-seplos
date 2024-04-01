@@ -119,7 +119,7 @@ class DBUS_SEPLOS:
         # dbus.add_path('/CustomName', battery.custom_name(), writeable=True)
 
         # Create static battery info
-        dbus.add_path('/System/NrOfCellsPerBattery', battery.telemetry.number_of_cells, writeable=True)
+        dbus.add_path('/System/NrOfCellsPerBattery', 16, writeable=True)
         dbus.add_path('/System/NrOfModulesOnline', 1, writeable=True)
         dbus.add_path('/System/NrOfModulesOffline', 0, writeable=True)
         dbus.add_path('/Capacity', battery.telemetry.remain_capacity,
@@ -204,7 +204,7 @@ class DBUS_SEPLOS:
             self.error[i]['count'] += 1
             time_since_first_error = (self.error[i]['timestamp_last'] - self.error[i]['timestamp_first'])
             if time_since_first_error >= 60:
-                logger.error('Timeout for too mny errors')
+                logger.error('Timeout for too many errors')
                 main_loop.quit()
         return True
 

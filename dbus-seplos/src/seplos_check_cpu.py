@@ -32,6 +32,7 @@ def get_CPU_load():
     pid = os.getpid()
     command_string = f'top | grep {pid}'
     result = os.popen(command_string).readline()
+    logger.info(f'CPU reading for pid {pid}: {result}')
     if not result:
         return None
 
