@@ -54,20 +54,20 @@ def main(parameters):
         logger.error(f'Port {port} does not exist')
         sys.exit(1)
 
-    seplos_pack = SeplosPack(battery_port=port)
-    if len(seplos_pack.seplos_batteries) == 0:
+    seplos_battery_pack = SeplosPack(battery_port=port)
+    if len(seplos_battery_pack.seplos_batteries) == 0:
         logger.error('No batteries found')
         sys.exit(1)
 
     DBusGMainLoop(set_as_default=True)
     main_loop = GLib.MainLoop()
-    service_pack = DBUS_SEPLOS(seplos_pack)
-    if not service_pack.setup_vedbus_pack():
+    dbus_service_pack = DBUS_SEPLOS(seplos_battery_pack)
+    if not dbus_service_pack.setup_vedbus_pack():
         logger.error('Failed to setup dbus')
         sys.exit(1)
 
-    GLib.timeout_add(seplos_pack.poll_interval,
-                     lambda: service_pack.publish_battery_pack(main_loop))
+    GLib.timeout_add(seplos_battery_pack.poll_interval,
+                     lambda: dbus_service_pack.publish_battery_pack(main_loop))
     logger.info(f'seplos-dbus started on port {port}')
 
     main_loop.run()

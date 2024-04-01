@@ -34,6 +34,7 @@ sys.path.insert(1,
 
 from vedbus import VeDbusService
 from settingsdevice import SettingsDevice
+from seplos_check_cpu import get_CPU_load
 from seplos_utils import logger, roundSec
 from seplos_utils import DRIVER_VERSION
 
@@ -127,6 +128,7 @@ class DBUS_SEPLOS:
                       writeable=True, gettextcallback=lambda p, v: '{:0.0f}Ah'.format(v))
         dbus.add_path('/Soc', None, writeable=True)
         dbus.add_path('/Soh', None, writeable=True)
+        dbus.add_path('/cpu', None, writeable=True)
         dbus.add_path('/Dc/0/Voltage', None, writeable=True,
                       gettextcallback=lambda p, v: '{:2.2f}V'.format(v))
         dbus.add_path('/Dc/0/Current', None, writeable=True,
@@ -252,6 +254,10 @@ class DBUS_SEPLOS:
         except Exception:
             logger.error('Error in publish_dbus cell voltages')
             pass
+        # cpu load
+        cpu_load = get_CPU_load()
+        if cpu_load is not None:
+            dbus['/cpu'] = cpu_load
 
     def publish_battery_pack(self, main_loop) -> bool:
         """
