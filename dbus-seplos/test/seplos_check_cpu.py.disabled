@@ -22,6 +22,7 @@
 ###########################################################
 
 import os
+import subprocess
 from seplos_utils import logger
 
 
@@ -30,14 +31,23 @@ def get_CPU_load():
     :return:
     """
     pid = os.getpid()
-    command_string = f'top | grep {pid}'
-    result = os.popen(command_string).readline()
-    logger.info(f'CPU reading for pid {pid}: {result}')
-    if not result:
+    command_string = f'top -n 1 -b | grep {pid}'
+
+    p = subprocess.Popen(command_string, stdout=subprocess.PIPE, shell=True)
+    try:
+        out, _ = p.communicate(timeout=1)
+    except subprocess.TimeoutExpired:
+        logger.error(f'CPU reading for pid {pid} failed')
         return None
 
-    rows = result.split()
-    if len(rows) > 6:
+    logger.info(f'CPU reading for pid {pid}: {out}')
+
+    if not out:
+        return None
+
+    out = out.decode()
+    rows = out.split()
+    if len(rows) < 6:
         return None
 
     cpu_load_percent = int(rows[6].replace('%', ''))

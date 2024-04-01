@@ -34,7 +34,7 @@ sys.path.insert(1,
 
 from vedbus import VeDbusService
 from settingsdevice import SettingsDevice
-from seplos_check_cpu import get_CPU_load
+# from seplos_check_cpu import get_CPU_load
 from seplos_utils import logger, roundSec
 from seplos_utils import DRIVER_VERSION
 
@@ -128,7 +128,7 @@ class DBUS_SEPLOS:
                       writeable=True, gettextcallback=lambda p, v: '{:0.0f}Ah'.format(v))
         dbus.add_path('/Soc', None, writeable=True)
         dbus.add_path('/Soh', None, writeable=True)
-        dbus.add_path('/cpu', None, writeable=True)
+        # dbus.add_path('/cpu', None, writeable=True)
         dbus.add_path('/Dc/0/Voltage', None, writeable=True,
                       gettextcallback=lambda p, v: '{:2.2f}V'.format(v))
         dbus.add_path('/Dc/0/Current', None, writeable=True,
@@ -213,30 +213,33 @@ class DBUS_SEPLOS:
         """
         dbus = self.dbusservice[i]
         battery = self.battery[i]
-        dbus['/System/NrOfCellsPerBattery'] = battery.telemetry.number_of_cells
-        dbus['/Soc'] = roundSec(battery.telemetry.soc, 1)
-        dbus['/Soh'] = roundSec(battery.telemetry.soh, 1)
-        dbus['/History/ChargeCycles'] = battery.telemetry.cycles
-        dbus['/Dc/0/Voltage'] = roundSec(battery.telemetry.total_pack_voltage, 2)
-        dbus['/Dc/0/Current'] = roundSec(battery.telemetry.dis_charge_current, 2)
-        dbus['/Dc/0/Power'] = roundSec(battery.telemetry.dis_charge_power, 2)
-        dbus['/Dc/0/Temperature'] = battery.telemetry.environ_temperature
-        dbus['/Capacity'] = battery.telemetry.remain_capacity
-        dbus['/System/NrOfModulesOnline'] = 1
-        dbus['/System/NrOfModulesOffline'] = 0
-        dbus['/System/MinCellTemperature'] = battery.telemetry.lowest_cell_temperature
-        dbus['/System/MinTemperatureCellId'] = battery.telemetry.lowest_cell_tid
-        dbus['/System/MaxCellTemperature'] = battery.telemetry.highest_cell_temperature
-        dbus['/System/MaxTemperatureCellId'] = battery.telemetry.highest_cell_tid
-        dbus['/System/MOSFET_Temperature'] = battery.telemetry.power_temperature
-        dbus['/System/Temperature1'] = battery.telemetry.temperature[0]
-        dbus['/System/Temperature2'] = battery.telemetry.temperature[1]
-        dbus['/System/Temperature3'] = battery.telemetry.temperature[2]
-        dbus['/System/Temperature4'] = battery.telemetry.temperature[3]
-        dbus['/System/MinVoltageCellId'] = battery.telemetry.lowest_cell_vid
-        dbus['/System/MaxVoltageCellId'] = battery.telemetry.highest_cell_vid
-        dbus['/System/MinCellVoltage'] = battery.telemetry.lowest_cell_voltage
-        dbus['/System/MaxCellVoltage'] = battery.telemetry.highest_cell_voltage
+        try:
+            dbus['/System/NrOfCellsPerBattery'] = battery.telemetry.number_of_cells
+            dbus['/Soc'] = roundSec(battery.telemetry.soc, 1)
+            dbus['/Soh'] = roundSec(battery.telemetry.soh, 1)
+            dbus['/History/ChargeCycles'] = battery.telemetry.cycles
+            dbus['/Dc/0/Voltage'] = roundSec(battery.telemetry.total_pack_voltage, 2)
+            dbus['/Dc/0/Current'] = roundSec(battery.telemetry.dis_charge_current, 2)
+            dbus['/Dc/0/Power'] = roundSec(battery.telemetry.dis_charge_power, 2)
+            dbus['/Dc/0/Temperature'] = battery.telemetry.environ_temperature
+            dbus['/Capacity'] = battery.telemetry.remain_capacity
+            dbus['/System/NrOfModulesOnline'] = 1
+            dbus['/System/NrOfModulesOffline'] = 0
+            dbus['/System/MinCellTemperature'] = battery.telemetry.lowest_cell_temperature
+            dbus['/System/MinTemperatureCellId'] = battery.telemetry.lowest_cell_tid
+            dbus['/System/MaxCellTemperature'] = battery.telemetry.highest_cell_temperature
+            dbus['/System/MaxTemperatureCellId'] = battery.telemetry.highest_cell_tid
+            dbus['/System/MOSFET_Temperature'] = battery.telemetry.power_temperature
+            dbus['/System/Temperature1'] = battery.telemetry.temperature[0]
+            dbus['/System/Temperature2'] = battery.telemetry.temperature[1]
+            dbus['/System/Temperature3'] = battery.telemetry.temperature[2]
+            dbus['/System/Temperature4'] = battery.telemetry.temperature[3]
+            dbus['/System/MinVoltageCellId'] = battery.telemetry.lowest_cell_vid
+            dbus['/System/MaxVoltageCellId'] = battery.telemetry.highest_cell_vid
+            dbus['/System/MinCellVoltage'] = battery.telemetry.lowest_cell_voltage
+            dbus['/System/MaxCellVoltage'] = battery.telemetry.highest_cell_voltage
+        except Exception:
+            logger.error('Error in publish_dbus basic data')
 
         # cell voltages
         try:
@@ -253,11 +256,17 @@ class DBUS_SEPLOS:
 
         except Exception:
             logger.error('Error in publish_dbus cell voltages')
-            pass
+
         # cpu load
+        """
         cpu_load = get_CPU_load()
-        if cpu_load is not None:
+        if cpu_load is None:
+            return
+        try:
             dbus['/cpu'] = cpu_load
+        except Exception:
+            logger.error('Error in publish_dbus cpu load')
+        """
 
     def publish_battery_pack(self, main_loop) -> bool:
         """
