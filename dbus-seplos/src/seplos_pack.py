@@ -32,7 +32,7 @@ class SeplosPack:
     """
     BATTERY_MASTER_BAUD = 9600
     BATTERY_SLAVE_BAUD = 19200
-    MAX_NUMBER_SLAVE_PACKS = 10
+    MAX_NUMBER_SLAVE_PACKS = 14
     POLL_INTERVAL = 3000
 
     def __init__(self, battery_port: str) -> None:

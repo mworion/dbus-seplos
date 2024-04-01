@@ -79,7 +79,7 @@ class Test3:
     POLL_INTERVAL = 3000
 
     def __init__(self, battery_port):
-        pass
+        self.poll_interval = 3000
 
 
 class Test4:
