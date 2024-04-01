@@ -181,7 +181,7 @@ class DBUS_SEPLOS:
                 self.setup_vedbus(i)
         return True
 
-    def publish_battery(self, main_loop, i: int) -> bool:
+    def request_battery(self, main_loop, i: int) -> bool:
         """
         This is called every battery.poll_interval millisecond as set up per
         battery type to read and update the data
@@ -263,6 +263,6 @@ class DBUS_SEPLOS:
         """
         """
         for i in range(self.number_batteries):
-            self.publish_battery(main_loop=main_loop, i=i)
+            self.request_battery(main_loop=main_loop, i=i)
             self.publish_dbus(i)
         return True
