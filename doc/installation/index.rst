@@ -21,7 +21,7 @@ these commands to start the installer:
 
 .. code-block:: bash
 
-   wget -O /tmp/install.sh https://raw.githubusercontent.com/mworion/dbus-seplos/master/install-target-gui.sh
+   wget -O /tmp/install.sh https://raw.githubusercontent.com/mworion/dbus-seplos/master/install-target.sh
    bash /tmp/install.sh
 
 The installer will download the latest released version of the driver and installs
