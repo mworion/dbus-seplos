@@ -16,8 +16,8 @@ Install or update over SSH
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. note:: Requires root access.
 
-Log into your Venus OS device using a SSH client like Putty or bash and run
-these commands to start the installer:
+Log into your Venus OS device using a SSH client like Putty or bash. Please change
+directory to /tmp and run these commands to start the installer:
 
 .. code-block:: bash
 

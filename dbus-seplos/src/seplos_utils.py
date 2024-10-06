@@ -38,7 +38,7 @@ logging.basicConfig(level=logging.WARNING,
                     datefmt='%Y-%m-%d %H:%M:%S',
                     )
 
-logger = logging.getLogger('Seplos')
+logger = logging.getLogger('dbus-seplos')
 
 
 def roundSec(value: float, digits: int) -> float:
