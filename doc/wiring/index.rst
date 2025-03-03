@@ -27,15 +27,14 @@ Step 2:
 ^^^^^^^
 
 Connect the CAN cable from Venus to the left port of the splitter. From then on
-the wiring is prepared to support additional RS-485 devices. attached to the
-master BMS (Box).
+the wiring is prepared to support additional RS-485 devices.
 
 Step 3:
 ^^^^^^^
 
 To connect to the Master Box, please plug the RS-485 cable to the right port of
 the splitter and the second RS-485 cable to the left over connector on the master
-battery.
+battery and plug the splitter in the CAN interface of the (Master) box.
 
 .. image:: image/splitter.png
     :align: center
