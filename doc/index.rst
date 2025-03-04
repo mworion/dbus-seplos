@@ -24,6 +24,7 @@ Content index
     wiring/index
     installation/index
     usage/index
+    problems/index
     changelog/index
 
 Known limitations
