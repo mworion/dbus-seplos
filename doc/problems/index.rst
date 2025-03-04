@@ -10,29 +10,29 @@ The following devices are used in my setup:
 
 Waveshare USB-HUB-7U-NP
 
-.. image:: image/usb_hub.png
+.. image:: image/usb_hub.jpg
     :align: center
     :scale: 71%
 
 Waveshare RS232/485 USB All
 
-.. image:: image/usb_converter.png
+.. image:: image/usb_converter.jpg
     :align: center
     :scale: 71%
 
 Ocnvlia ADUM3160 USB Isolatormodul USB zu USB Spannungsisolatormodul
 
-.. image:: image/usb_isolator.png
+.. image:: image/usb_isolator.jpg
     :align: center
     :scale: 71%
 
-.. image:: image/usu_isolator1.png
+.. image:: image/usu_isolator1.jpg
     :align: center
     :scale: 71%
 
 InLine 69933 ISDN Splitter
 
-.. image:: image/RJ_45_splitter.png
+.. image:: image/RJ_45_splitter.jpg
     :align: center
     :scale: 71%
 
@@ -51,7 +51,7 @@ connection is working properly.
     :align: center
     :scale: 71%
 
-Please tyke into account that the master pack (connected through the splitter)
+Please take into account that the master pack (connected through the splitter)
 runs on 9600m baud rate, while the slave pack (connected through the RS-485 port
 of the master pack) runs on 19200 baud rate.
 
