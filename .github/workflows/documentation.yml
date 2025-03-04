@@ -35,18 +35,33 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: 3.12
-      - name: Install dependencies
+
+      - name: install drawio package
         run: |
-          pip install sphinx sphinx_rtd_theme alabaster rst2pdf sphinx-copybutton
+          sudo apt update
+          sudo apt install snapd
+          sudo snap install drawio
+        
+      - name: Install python dependencies
+        run: |
+          pip install sphinx sphinx_rtd_theme alabaster sphinx-copybutton
+          pip install setuptools sphinxcontrib-drawio sphinx-simplepdf
+          
       - name: Sphinx build
         run: |
-          sphinx-build doc doc/build
+          sphinx-build doc doc/html
+          sphinx-build -M simplepdf doc doc/pdf
+          cp doc/pdf/simplepdf/*.pdf doc/html
+          mv doc/pdf/simplepdf/*.pdf doc/html/dbus-seplos.pdf
+
       - name: check files
         run: |
           ls -la
-          ls -la doc/build
+          ls -la doc/pdf
+          ls -la doc/html
+
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
         with:
           publish_branch: gh-pages
