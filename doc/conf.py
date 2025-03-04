@@ -63,6 +63,8 @@ extensions = [
     'sphinx_copybutton',
 ]
 
+autosectionlabel_prefix_document = True
+
 # drawio_binary_path = '/Applications/draw.io.app/Contents/MacOS/draw.io'
 # diagrams_exporter_path = './'
 
@@ -86,12 +88,6 @@ html_theme = 'alabaster'
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 html_css_files = ["custom.css"]
-
-pdf_documents = [('index', 'dbus-seplos', 'dbus-seplos', 'mworion')]
-# index - master document
-# rst2pdf - name of the generated pdf
-# Sample rst2pdf doc - title of the pdf
-# Your Name - author name in the pdf
 
 html_theme_options = {
     'logo': 'mw.png',
