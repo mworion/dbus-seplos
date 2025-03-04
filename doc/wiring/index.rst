@@ -36,7 +36,7 @@ To connect to the Master Box, please plug the RS-485 cable to the right port of
 the splitter and the second RS-485 cable to the left over connector on the master
 battery and plug the splitter in the CAN interface of the (Master) box.
 
-.. image:: image/splitter.png
+.. image:: image/splitter.jpg
     :align: center
     :scale: 71%
 
