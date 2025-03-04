@@ -55,11 +55,12 @@ master_doc = 'index'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    'sphinx.ext.autosectionlabel',
-    'sphinx.ext.githubpages',
+    "sphinx.ext.autosectionlabel",
+    "sphinx.ext.intersphinx",
+    "sphinx.ext.githubpages",
     "sphinxcontrib.drawio",
-    'sphinx_copybutton'
     "sphinx_simplepdf",
+    'sphinx_copybutton',
 ]
 
 # drawio_binary_path = '/Applications/draw.io.app/Contents/MacOS/draw.io'
@@ -86,7 +87,7 @@ html_theme = 'alabaster'
 html_static_path = ['_static']
 html_css_files = ["custom.css"]
 
-pdf_documents = [('index', u'dbus-seplos', u'dbus-seplos', u'mworion')]
+pdf_documents = [('index', 'dbus-seplos', 'dbus-seplos', 'mworion')]
 # index - master document
 # rst2pdf - name of the generated pdf
 # Sample rst2pdf doc - title of the pdf
@@ -103,7 +104,7 @@ html_theme_options = {
     'body_bg': '#FFFFFFFF',
 }
 
-simplepdf_file_name = "dbus-seplos_" + version + ".pdf"
+simplepdf_file_name = "dbus-seplos-" + version + ".pdf"
 simplepdf_use_weasyprint_api = True
 simplepdf_weasyprint_flags = ["-v"]
 simplepdf_vars = {
