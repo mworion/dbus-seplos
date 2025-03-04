@@ -1,7 +1,12 @@
 Cable wiring
 ============
 
-The wiring is pretty simple.
+The wiring is pretty simple. See the following steps to connect the Venus GX to
+the Master Box and the Master Box to the other boxes.
+
+.. drawio-image:: image/overview.drawio
+    :align: center
+    :export-scale: 71
 
 Step 1:
 ^^^^^^^
