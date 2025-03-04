@@ -26,7 +26,7 @@ Ocnvlia ADUM3160 USB Isolatormodul USB zu USB Spannungsisolatormodul
     :align: center
     :scale: 71%
 
-.. image:: image/usu_isolator1.jpg
+.. image:: image/usb_isolator1.jpg
     :align: center
     :scale: 71%
 
