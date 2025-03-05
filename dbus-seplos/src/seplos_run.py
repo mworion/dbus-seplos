@@ -16,7 +16,7 @@
 #
 # python-based service for victron cerbo > v3.00
 #
-# (c) 2024 by mworion
+# (c) 2025 by mworion
 # Licence MIT
 #
 ###########################################################
@@ -36,7 +36,7 @@ def get_port(parameters) -> str:
     USB serial port will be ttyUSB0.
     """
     if len(parameters) == 2:
-        logger.info(f"Getting port {parameters[1]}")
+        logger.debug(f"Getting port {parameters[1]}")
         return '/dev/' + parameters[1]
     else:
         return ''
@@ -68,10 +68,10 @@ def main(parameters):
 
     GLib.timeout_add(seplos_battery_pack.poll_interval,
                      lambda: dbus_service_pack.publish_battery_pack(main_loop))
-    logger.info(f'seplos-dbus started on port {port}')
+    logger.debug(f'seplos-dbus started on port {port}')
 
     main_loop.run()
-    logger.info('seplos-dbus stopped')
+    logger.debug('seplos-dbus stopped')
 
 
 if __name__ == '__main__':

@@ -16,7 +16,7 @@
 #
 # python-based service for victron cerbo > v3.00
 #
-# (c) 2024 by mworion
+# (c) 2025 by mworion
 # Licence MIT
 #
 ###########################################################
@@ -25,7 +25,8 @@ import logging
 import time
 import datetime
 
-DRIVER_VERSION = '0.1.6'
+DRIVER_VERSION = '0.2.0'
+SERIAL_TIMEOUT = 2
 
 logging.Formatter.converter = time.gmtime
 timeTag = datetime.datetime.utcnow().strftime('%Y-%m-%d')

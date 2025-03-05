@@ -16,7 +16,7 @@
 #
 # python-based service for victron cerbo > v3.00
 #
-# (c) 2024 by mworion
+# (c) 2025 by mworion
 # Licence MIT
 #
 ###########################################################

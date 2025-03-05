@@ -3,6 +3,11 @@ Changelog
 
 Released versions of dbus-seplos
 --------------------------------
+v 0.2.0
+
+- added some more logging for problem solving
+- increased the timeout for the dbus-seplos loading to 2s
+
 v 0.1.6
 
 - adjusted the polling interval to number of slave devices

@@ -16,15 +16,14 @@
 #
 # python-based service for victron cerbo > v3.00
 #
-# (c) 2024 by mworion
+# (c) 2025 by mworion
 # Licence MIT
 #
 ###########################################################
-
 import serial
 from seplos_battery import SeplosBattery
 from seplos_comm import Comm
-from seplos_utils import logger
+from seplos_utils import logger, SERIAL_TIMEOUT
 
 
 class SeplosPack:
@@ -62,7 +61,7 @@ class SeplosPack:
         logger.debug(f'Test master battery at {self.battery_port}')
         serial_if = serial.Serial(port=self.battery_port,
                                   baudrate=self.BATTERY_MASTER_BAUD,
-                                  timeout=1)
+                                  timeout=SERIAL_TIMEOUT)
         if self.test_and_add_battery(serial_if, address=0):
             return True
         else:
@@ -76,7 +75,7 @@ class SeplosPack:
         logger.debug(f'Test slave battery at {self.battery_port}')
         serial_if = serial.Serial(port=self.battery_port,
                                   baudrate=self.BATTERY_SLAVE_BAUD,
-                                  timeout=1)
+                                  timeout=SERIAL_TIMEOUT)
         slave_found = False
         for address in range(1, self.MAX_NUMBER_SLAVE_PACKS + 1):
             if not self.test_and_add_battery(serial_if, address=address):
@@ -92,12 +91,12 @@ class SeplosPack:
     def setup_batteries(self) -> None:
         """
         """
-        logger.info(f'Checking batteries at {self.battery_port}')
+        logger.debug(f'Checking batteries at {self.battery_port}')
         if self.check_master():
-            logger.info(f'Master battery found at {self.battery_port}')
+            logger.debug(f'Master battery found at {self.battery_port}')
             return
 
         if self.check_slave():
-            logger.info(f'Slave batteries found at {self.battery_port}')
+            logger.debug(f'Slave batteries found at {self.battery_port}')
             numb_batt = len(self.seplos_batteries)
             self.poll_interval = self.POLL_INTERVAL + 0.5 * (numb_batt - 1)
