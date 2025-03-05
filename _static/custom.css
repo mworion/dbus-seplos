@@ -1,0 +1,19 @@
+button.copybtn {
+    opacity: 1;
+    width: 2.2em;
+    height: 2.2em;
+    color: #4890d0;
+    border: #244868 1px solid;
+}
+
+button.copybtn svg {
+    stroke: currentColor;
+    width: 2.0em;
+    height: 2.0em;
+    padding: 0.1em;
+}
+
+button.copybtn.success {
+    border-color: #244868;
+    color: #4890d0;
+}

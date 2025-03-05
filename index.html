@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Welcome to dbus-seplos ! &#8212; dbus-seplos 0.0.3 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=b9f84dae" />
+    <link rel="stylesheet" type="text/css" href="_static/drawio.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=74d82cc1" />
+    <script src="_static/documentation_options.js?v=47de8214"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Cable wiring" href="wiring/index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<p class="logo">
+  <a href="#">
+    <img class="logo" src="_static/mw.png" alt="Logo" />
+    
+    <h1 class="logo logo-name">dbus-seplos</h1>
+    
+  </a>
+</p>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="wiring/index.html">Cable wiring</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation/index.html">Driver installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage/index.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="problems/index.html">Problem solving</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog/index.html">Changelog</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+      <li>Next: <a href="wiring/index.html" title="next chapter">Cable wiring</a></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="welcome-to-dbus-seplos">
+<h1>Welcome to dbus-seplos !<a class="headerlink" href="#welcome-to-dbus-seplos" title="Link to this heading">¶</a></h1>
+<a class="reference internal image-reference" href="_images/main.png"><img alt="_images/main.png" class="align-center" src="_images/main.png" style="width: 560.9px; height: 229.32999999999998px;" />
+</a>
+<p>The basic idea is that dbus-seplos will generate a second path only readable to
+the seplos BMS and try to gather all further detailed information from the BMS
+like cell voltages and offer them in dbus of a venus system. Further it will add
+and change some venus UI pages to show these information.</p>
+<p>This is a driver for Venus OS devices (any GX device sold by Victron or a
+Raspberry Pi running the Venus OS image).</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Expert functionality! You should be sure about what you are doing.
+I do not take any responsibility for any damage or loss of data.</p>
+</div>
+<section id="content-index">
+<h2>Content index<a class="headerlink" href="#content-index" title="Link to this heading">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="wiring/index.html">Cable wiring</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="wiring/index.html#step-1">Step 1:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wiring/index.html#step-2">Step 2:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wiring/index.html#step-3">Step 3:</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="installation/index.html">Driver installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation/index.html#install-or-update-over-ssh">Install or update over SSH</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation/index.html#settings">Settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation/index.html#behavior">Behavior</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="usage/index.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="problems/index.html">Problem solving</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="problems/index.html#device-setup">Device setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="problems/index.html#checking-connectivity">Checking Connectivity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="problems/index.html#checking-the-logs">Checking the logs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="changelog/index.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="changelog/index.html#released-versions-of-dbus-seplos">Released versions of dbus-seplos</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<section id="known-limitations">
+<h3>Known limitations<a class="headerlink" href="#known-limitations" title="Link to this heading">¶</a></h3>
+<p>This driver is developed and tested on a seplos v2 (FW 16.06) and a
+Venus GX (FW 3.x). It will not run on Venus OS version lower to 3.0 and does not
+support beta versions with the new UI from 3.20 on.</p>
+<p>The driver is not tested on a seplos v3 system. There definitely the wiring has
+to be adjusted and checked if the driver is working.</p>
+<p>The installation of the driver might interfere with other drivers. Especially
+having dbus-serial-battery installed at the same time causes conflicts</p>
+</section>
+<section id="reporting-issues">
+<h3>Reporting issues<a class="headerlink" href="#reporting-issues" title="Link to this heading">¶</a></h3>
+<p>To improve quality and usability any feedback is highly welcome! To maintain a good
+transparency and professional work for my, please respect the following
+recommendations how to feed back.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Please report issues / bugs here:</p>
+<p><a class="reference external" href="https://github.com/mworion/dbus-seplos/issues">https://github.com/mworion/dbus-seplos/issues</a>.</p>
+<p>And if you have feature requests discussions or for all other topics of
+interest there is a good place to start here:</p>
+<p><a class="reference external" href="https://github.com/mworion/dbus-seplos/discussions">https://github.com/mworion/dbus-seplos/discussions</a></p>
+</div>
+<p>In case of a bug report please have a good description (maybe a screenshot if it‘s
+related to GUI) and add the log file(s). Normally you just could drop the log file
+(or PNG in case of a screen shot) directly to the webpage issues on GitHub. In
+some cases GitHub does not accept the file format. In this case, please zip them
+and drop the zipped file. This will work. If you have multiple files, please
+don‘t zip them to one file! I need them separated and zipped causes more work.</p>
+<p>If changes are made due to a feedback, new releases will have a link to the closed
+issues on GitHub.</p>
+</section>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &#169;2025, mworion.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.2.3</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

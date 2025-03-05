@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Problem solving &#8212; dbus-seplos 0.0.3 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=b9f84dae" />
+    <link rel="stylesheet" type="text/css" href="../_static/drawio.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=74d82cc1" />
+    <script src="../_static/documentation_options.js?v=47de8214"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Changelog" href="../changelog/index.html" />
+    <link rel="prev" title="Usage" href="../usage/index.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<p class="logo">
+  <a href="../index.html">
+    <img class="logo" src="../_static/mw.png" alt="Logo" />
+    
+    <h1 class="logo logo-name">dbus-seplos</h1>
+    
+  </a>
+</p>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../wiring/index.html">Cable wiring</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Driver installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/index.html">Usage</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Problem solving</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#device-setup">Device setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#checking-connectivity">Checking Connectivity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#checking-the-logs">Checking the logs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog/index.html">Changelog</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="../usage/index.html" title="previous chapter">Usage</a></li>
+      <li>Next: <a href="../changelog/index.html" title="next chapter">Changelog</a></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="problem-solving">
+<h1>Problem solving<a class="headerlink" href="#problem-solving" title="Link to this heading">¶</a></h1>
+<p>Attached to this document you will find a list of common problems that you may use
+for troubleshooting. If you have any other problem that is not listed here, please
+contact my through github issues</p>
+<section id="device-setup">
+<h2>Device setup<a class="headerlink" href="#device-setup" title="Link to this heading">¶</a></h2>
+<p>The following devices are used in my setup:</p>
+<p>Waveshare USB-HUB-7U-NP</p>
+<a class="reference internal image-reference" href="../_images/usb_hub.jpg"><img alt="../_images/usb_hub.jpg" class="align-center" src="../_images/usb_hub.jpg" style="width: 966.31px; height: 362.09999999999997px;" />
+</a>
+<p>Waveshare RS232/485 USB All</p>
+<a class="reference internal image-reference" href="../_images/usb_converter.jpg"><img alt="../_images/usb_converter.jpg" class="align-center" src="../_images/usb_converter.jpg" style="width: 838.51px; height: 489.9px;" />
+</a>
+<p>Ocnvlia ADUM3160 USB Isolatormodul USB zu USB Spannungsisolatormodul</p>
+<a class="reference internal image-reference" href="../_images/usb_isolator.jpg"><img alt="../_images/usb_isolator.jpg" class="align-center" src="../_images/usb_isolator.jpg" style="width: 682.31px; height: 474.98999999999995px;" />
+</a>
+<a class="reference internal image-reference" href="../_images/usb_isolator1.jpg"><img alt="../_images/usb_isolator1.jpg" class="align-center" src="../_images/usb_isolator1.jpg" style="width: 1001.0999999999999px; height: 807.9799999999999px;" />
+</a>
+<p>InLine 69933 ISDN Splitter</p>
+<a class="reference internal image-reference" href="../_images/RJ_45_splitter.jpg"><img alt="../_images/RJ_45_splitter.jpg" class="align-center" src="../_images/RJ_45_splitter.jpg" style="width: 1065.0px; height: 840.64px;" />
+</a>
+<p>The wiring is done from Cerbo GX to the Isolator Module, the USB-HUB-7U-NP, then to
+the USB - RS485 converter and finally to the splitter and RS-485 port of the
+master battery pack. The CAN interface is connected to the splitter of the master
+battery pack as well directly from Cerbo.</p>
+</section>
+<section id="checking-connectivity">
+<h2>Checking Connectivity<a class="headerlink" href="#checking-connectivity" title="Link to this heading">¶</a></h2>
+<p>Before you start investigating the problem, you should check the connectivity
+of the devices. You can use the Battery Monitor of Seplos to check if each
+connection is working properly.</p>
+<a class="reference internal image-reference" href="../_images/battery_monitor.png"><img alt="../_images/battery_monitor.png" class="align-center" src="../_images/battery_monitor.png" style="width: 686.5699999999999px; height: 550.25px;" />
+</a>
+<p>Please take into account that the master pack (connected through the splitter)
+runs on 9600m baud rate, while the slave pack (connected through the RS-485 port
+of the master pack) runs on 19200 baud rate.</p>
+<p>You should be able to see each pack separately when using the dedicated USB-RS485
+converter. dbus-seplos later on chooses the correct port and speed for each pack.</p>
+</section>
+<section id="checking-the-logs">
+<h2>Checking the logs<a class="headerlink" href="#checking-the-logs" title="Link to this heading">¶</a></h2>
+<p>You can check the logs of dbus-seplos to see if there are any errors or warnings.
+The location of the logs is in the following path:</p>
+<p>/var/log/dbus-seplos.ttyUSBxy</p>
+<p>where xy is the number of the USB port where the device is connected.</p>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &#169;2025, mworion.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.2.3</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="../_sources/problems/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
